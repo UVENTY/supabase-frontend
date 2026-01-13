@@ -1,0 +1,30 @@
+.svg-counter {
+  position: absolute;
+  z-index: 50;
+  margin-top: -25px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: ease .3s;
+  transition-property: opacity, margin-top, transform;
+}
+
+.svg-counter.visible {
+  transform: translateX(-50%); 
+  margin-top: 0;
+  opacity: 1;
+}
+
+.svg-counter:not(.visible) {
+  transform: translateX(-1000px);
+  pointer-events: none;
+}
+
+.svg-counter.visible {
+  pointer-events: none;
+}
+
+.svg-counter.visible .input-number_group,
+.svg-counter.visible button,
+.svg-counter.visible input {
+  pointer-events: auto;
+}

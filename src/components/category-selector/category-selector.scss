@@ -1,0 +1,115 @@
+@import '../../../mixins.scss';
+
+.category-selector {
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-gray-2);
+  border-radius: var(--blocks-radius);
+  list-style: none;
+  margin: 0;
+  border: 1px solid #40403E;
+  position: relative;
+  transition: ease-in-out .3s height;
+  touch-action: none;
+
+  @include bp(device) {
+    border: none;
+  }
+
+  &-option {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 0;
+    align-items: center;
+    height: 24px;
+    padding: 0 16px;
+    transition: ease .3s;
+    transition-property: top, height;
+
+    &_disabled {
+      pointer-events: none;
+    }
+
+    &_selected {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+
+      .category-selector_opened & {
+        height: 38px;
+      }
+    }
+    
+    &_selected,
+    &:hover {
+      cursor: pointer;
+
+      .category-selector-label,
+      .category-selector-price {
+        opacity: 1;
+      }
+    }
+    
+    .category-selector-label {
+      height: 13px;
+    }
+  }
+  &-column {
+    display: flex;
+    gap: 10px;
+    flex: 1 1 auto;
+    align-items: center;
+
+    @include bp(device) {
+      width: 140px;
+    }
+  }
+  &-icon {
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-label {
+    text-transform: uppercase;
+    flex-basis: 150px;
+    opacity: 0.5;
+    transition: ease .3s opacity;
+  }
+  &-count {
+    margin-right: auto;
+    display: none;
+  }
+  &-count, &-sale {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    color: #f8f5ec4d;
+  }
+  &-sale {
+    text-decoration: line-through;
+  }
+  &-price {
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.5;
+
+    span {
+      font-size: 12px;
+    }
+
+    &-del {
+      font-size: 14px !important;
+      color: white !important;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { default } from './seating-scheme'

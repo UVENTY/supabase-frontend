@@ -1,0 +1,165 @@
+.button {
+  --bg-color: var(--color-gray-2);
+  --color: var(--color-gray-8);
+  --height: 30px;
+  --radius: 24px;
+  --font-size: 10px;
+  --shadow: none;
+  --opacity: 1;
+
+  display: block;
+  height: var(--height);
+  max-height: var(--height);
+  border-radius: var(--radius);
+  border: none;
+  font-family: 'articulat', sans-serif;
+  font-size: var(--font-size);
+  font-weight: 700;
+  font-style: italic;
+  background-color: var(--bg-color);
+  text-align: center;
+  cursor: pointer;
+  color: var(--color) !important;
+  box-sizing: border-box;
+  transition: ease .3s;
+  transition-property: background-color, color, box-shadow, opacity, border-color;
+  box-shadow: var(--shadow);
+  opacity: var(--opacity);
+
+  &:not(:disabled):focus {
+    --shadow: 0 5px 10px #ffffff22;
+    outline: none;
+  }
+
+  &:disabled {
+    --opacity: .3;
+    cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    --shadow: 0px 2px 5px #ffffff77;
+  }
+
+  &_color {
+    &_bordered {
+      --bg-color: transparent;
+      --color: var(--color-gray-2);
+      border: 1px solid var(--color-gray-2);
+  
+      &:not(:disabled):hover {
+        --bg-color: var(--color-success);
+        --color: var(--color-dark-9);
+        border-color: var(--color-success);
+        box-shadow: none;
+      }
+  
+      &:not(:disabled):active {
+        --bg-color: #4BAB62;
+        position: relative;
+        top: 1px;
+        box-shadow: inset 0 0 2px #00000033
+      }
+    }
+  
+    &_dark {
+      --bg-color: var(--color-gray-8);
+      --color: var(--color-gray-5);
+      border: 1px solid #ffffff00;
+      border-left: none;
+
+      &:not(:disabled):hover {
+        --shadow: none;
+        --color: var(--color-success);
+        border-color: #00000011;
+      }
+
+      &:not(:disabled):active {
+        --shadow: inset 0 0 3px #00000033;
+        border-color: #00000022;
+        padding-top: 2px;
+      }
+
+      &:not(:disabled):focus {
+        --shadow: none;
+        outline: 1px solid #ffffff11;
+      }
+    }
+
+    &_ghost {
+      --color: var(--color-gray-2);
+      --shadow: none;
+      --bg-color: none;
+
+      &:not(:disabled):active,
+      &:not(:disabled):hover,
+      &:not(:disabled):focus {
+        --shadow: none;
+      }
+    }
+  }
+
+  &_size {
+    &_xlarge {
+      --height: 50px;
+      --radius: 25px;
+      --font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    &_large {
+      --height: 40px;
+      --radius: 20px;
+      --font-size: 12px;
+    }
+
+    &_medium {
+      --height: 30px;
+      --radius: 12px;
+      --font-size: 12px;
+    }
+
+    &_small {
+      --height: 20px;
+      --radius: 8px;
+      min-width: 30px;
+    }
+  }
+
+  &_attach {
+    &_top {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &_right {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &_bottom {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &_left {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  @keyframes dash {
+    to {
+      background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+    }
+  }
+
+  &_loading {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    background: #53BC6B;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+  }
+}

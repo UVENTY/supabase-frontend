@@ -1,0 +1,196 @@
+@import '../../../mixins.scss';
+
+.layout {
+  --top-line-height: 28px;
+  --mobile-select-category-height: 75px;
+  --mobile-select-cart-height: 150px;
+  --mobile-scheme-height: calc(100dvh - var(--top-line-height) - var(--mobile-select-category-height) - var(--mobile-select-cart-height));
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+
+  50% {
+    transform: scale(0.8) rotate(-360deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.loading {
+  &-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: ease-in-out .3s opacity;
+    pointer-events: none;
+    
+    &_hidden {
+      opacity: 0;
+    }
+  }
+}
+.loader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #162534;
+  border-top-color: #4bc8eb;
+  border-bottom-color: #f13a8f;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+
+  &-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  &-inner {
+    border-top-color: #36f372;
+    border-bottom-color: white;
+    animation-duration: 2s;
+  }
+  
+  &-wrapper-bg {
+    background: black;
+    padding: 20px;
+  }
+
+  &-content {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    z-index: 9998;
+    background: #212121;
+    opacity: 0;
+    color: #fff;
+    pointer-events: none;
+    transition: ease-in-out .3s opacity;
+
+    &_visible {
+      opacity: 1;
+      z-index: 9998;
+    }
+
+    svg {
+      width: 100px;
+    }
+  }
+}
+
+.loader-content {
+  animation: ease .3s fadeIn;
+
+  @include bp(mobile) {
+    background-color: #212121;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    inset: 28px 0 0;
+    height: auto;
+    transition: ease-in-out .3s opacity;
+    right: 150%;
+    bottom: 150%;
+
+    &_mobile-visible {
+      z-index: 9998 !important;
+    }
+  }
+
+  &_mobile-visible {
+    z-index: 15;
+    opacity: 1;
+    transform: translate(0, 0);
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.mobile-placeholder {
+  display: none;
+
+  @include bp(device) {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 60vh;
+    background: url('https://s-karinsky.github.io/static/build/tickshow/placeholder_bg.png') no-repeat center center;
+    background-size: contain;
+
+    &:has(+ .loader-content_mobile-visible) {
+      z-index: -1;
+    }
+  }
+}
+
+.mobile-button {
+  display: block;
+  line-height: 50px;
+  width: calc(100% - 40px);
+}
+
+.mobile-logo {
+  width: 144px;
+}
+
+.mobile-slogan {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #828282;
+}
+
+.mobile-close {
+  height: 28px;
+  position: fixed;
+  inset: 0 0 auto;
+  background-color: #4EAE63;
+  color: var(--color-gray-2);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  display: none;
+
+  @include bp(mobile) {
+    &_visible {
+      display: flex;
+      z-index: 9998;
+    }
+  }
+
+  a {
+    color: var(--color-gray-2) !important;
+    
+    svg {
+      vertical-align: middle;
+    }
+
+    .icon-arrow {
+      margin-right: 8px;
+    }
+  }
+}

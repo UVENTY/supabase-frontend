@@ -1,0 +1,31 @@
+#root {
+  --color-gray-2: #F8F5EC;
+  --color-gray-2-alpha: #F8F5EC99;
+  --color-gray-5: #6F6E6B;
+  --color-gray-7: #40403E;
+  --color-gray-8: #363635;
+  --color-gray-9: #2C2C2B;
+  --color-success: #53BC6B;
+  --color-success-dark: #4BAB62;
+  --color-failure: #F66969;
+
+  --sidebar-width: 540px;
+  --sidebar-padding-x: 25px;
+  --sidebar-padding-y: 25px;
+  
+  --layout-radius: 12px;
+  --blocks-radius: 16px;
+}
+
+@media (max-width: 1023px) {
+  #root {
+    --sidebar-padding-x: 16px;
+    --sidebar-padding-y: 16px;
+  }
+}
+
+@media (max-width: 1279px) {
+  #root {
+    --sidebar-width: 450px;
+  }
+}

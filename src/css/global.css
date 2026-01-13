@@ -1,0 +1,174 @@
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.05rem;
+  background-color: #212121;
+  color: #fff;
+  position: relative;
+}
+
+#root * {
+  font-family: 'articulat', sans-serif;
+}
+
+#root a {
+  text-decoration: none;
+}
+
+#root button,
+#root select {
+  cursor: pointer;
+}
+
+#root input,
+#root select,
+#root textarea {
+  outline: none;
+}
+
+#root *::-webkit-scrollbar {
+  width: 4px;
+}
+
+#root *::-webkit-scrollbar-track {
+  background: #52524f67;
+  border-left: 1px solid #2c2c2b;
+  border-right: 1px solid #2c2c2b;
+}
+#root *::-webkit-scrollbar-thumb {
+  background: #52524f;
+  border-radius: 10px;
+}
+
+#root .w100 {
+  width: 100%;
+}
+
+#root .df {
+  display: flex;
+}
+
+#root .aic {
+  align-items: center;
+}
+
+#root .aife {
+  align-items: flex-end;
+}
+
+#root .jcc {
+  justify-content: center;
+}
+
+#root .fdc {
+  flex-direction: column;
+}
+
+#root .fww {
+  flex-wrap: wrap;
+}
+
+#root .jcsb {
+  justify-content: space-between;
+}
+
+#root .pd1_2 {
+  padding: 1% 2%;
+}
+
+#root .gap25 {
+  gap: 25px;
+}
+
+#root .gap20 {
+  gap: 20px;
+}
+
+#root .gap15 {
+  gap: 15px;
+}
+
+#root .gap10 {
+  gap: 10px;
+}
+
+#root .gap8 {
+  gap: 8px;
+}
+
+#root .gap5 {
+  gap: 5px;
+}
+
+#root .cp {
+  cursor: pointer;
+  user-select: none;
+}
+
+#root .fs22 {
+  font-size: 22px;
+}
+
+#root .fs18 {
+  font-size: 18px;
+}
+
+#root .fs16 {
+  font-size: 16px;
+}
+
+#root .fs14 {
+  font-size: 14px;
+}
+
+#root .fs12 {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+#root .fs10 {
+  font-size: 10px;
+}
+#root .fs12l { 
+  background-color: transparent;
+  border: none;
+}
+
+#root .fs9 {
+  font-size: 9px;
+}
+
+@media (max-width: 970px) {
+  #root *::-webkit-scrollbar {
+    width: 4px !important;
+  }
+}
+
+#root .seats-preview svg {
+  width: 14px;
+  height: 12px;
+}
+#root .modal-bottom-container {
+  display: flex;
+  margin-top: 25px;
+}
+#root .modal-bottom-container .svg-info-container{
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+#root .modal-bottom-container .svg-info-icon-path{
+  stroke: #F8F5EC;
+}
+#root .modal-bottom-container .modal-bottom-info-text {
+  transition: ease .3s;
+  transition-property: color;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Articulat CF', sans-serif;
+  line-height: 12px;
+  color: #F8F5EC;
+}

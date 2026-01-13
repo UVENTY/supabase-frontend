@@ -1,0 +1,46 @@
+@import '../../../mixins.scss';
+
+.countdown {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-gray-7);
+  border-radius: 6px;
+  height: 36px;
+  color: var(--color-gray-2);
+  padding: 0 22px;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -50px;
+  transition: ease-in-out .3s margin-top;
+  box-shadow: 0.95px 2.86px 6.68px 0px #0000001A,
+    4.77px 11.44px 12.4px 0px #00000017,
+    11.44px 24.8px 16.21px 0px #0000000D,
+    20.98px 43.87px 19.07px 0px #00000003,
+    32.43px 68.67px 20.98px 0px #00000000;
+
+  &_active {
+    margin-top: 16px;
+  }
+
+  &-icon,
+  &-text {
+    opacity: 0.5;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.event-countdown {
+  @include bp(device) {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+}

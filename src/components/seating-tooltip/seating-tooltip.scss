@@ -1,0 +1,112 @@
+.seating-tooltip {
+  background-color: var(--color-gray-9);
+  border-radius: var(--blocks-radius);
+  padding: 12px;
+  min-width: 150px;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: ease-in-out .3s;
+  padding-bottom: 30px;
+  transition-property: transform, left, top, opacity;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 1px 3px 7px 0px #0000001A,
+    5px 12px 13px 0px #00000017,
+    12px 26px 17px 0px #0000000D,
+    22px 46px 20px 0px #00000003,
+    34px 72px 22px 0px hsla(0, 0%, 0%, 0);
+
+  &_visible {
+    opacity: 1;
+    transform: translate(-100%, 5px);
+
+    @media (max-width: 1023px) {
+      pointer-events: all;
+    }
+  }
+
+  &_over {
+    transition-property: left, top, opacity;
+    transform: translate(-100%, -115%);
+  }
+
+  &-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &-icon {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &-desc {
+    display: flex;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+  }
+
+  &-category,
+  &-text {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-text {
+    text-align: right;
+  }
+
+  &-seat {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    span {
+      color: var(--color-gray-2);
+    }
+  }
+
+  &-button {
+    border: none;
+    border-top: 1px solid #696865;
+    position: absolute;
+    inset: auto 0 0 0;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--color-gray-2);
+    opacity: 0.3;
+    height: 30px;
+    background-color: transparent;
+    transition: ease-in-out .3s;
+    transition-property: color, background-color, opacity;
+    outline: none;
+
+    &_selected {
+      opacity: 1;
+      color: var(--color-gray-9);
+    }
+
+    svg {
+      vertical-align: top;
+    }
+  }
+}
